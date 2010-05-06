@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  due: 2010-05-05 10:10:02
+  completed: false
+  currentweek: false
+
+two:
+  name: MyString
+  due: 2010-05-05 10:10:02
+  completed: false
+  currentweek: false

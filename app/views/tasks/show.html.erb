@@ -1,0 +1,24 @@
+<% title "Task" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+<p>
+  <strong>Due:</strong>
+  <%= @task.due %>
+</p>
+<p>
+  <strong>Completed:</strong>
+  <%= @task.completed %>
+</p>
+<p>
+  <strong>Currentweek:</strong>
+  <%= @task.currentweek %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_task_path(@task) %> |
+  <%= link_to "Destroy", @task, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tasks_path %>
+</p>

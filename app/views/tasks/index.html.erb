@@ -1,0 +1,17 @@
+<% title "Tasks" %>
+
+<%= render 'form' %>
+<hr/>
+
+<h2>List of Tasks:</h2>
+<div id="tasklist">
+  <% @complete.each do |task| %>
+    <p>
+      <%= task.name %> >> due <%= task.due.strftime('%A') %> which is in <b><%= distance_of_time_in_words(Time.now, task.due) %></b>
+      <%= link_to "complete!", complete_task_path(task.id) %>
+      <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+    </p>
+  <% end %>
+</div>
+<hr/>
+<%= link_to "show all", "/showall" %>

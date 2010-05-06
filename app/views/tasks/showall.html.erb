@@ -1,0 +1,14 @@
+<% title "Tasks" %>
+
+<h2>List of All Tasks:</h2>
+<div id="tasklist">
+  <% @tasks.each do |task| %>
+    <p>
+      <%= task.name %> >> due <%= task.due.strftime('%A') %> which is in <b><%= distance_of_time_in_words(Time.now, task.due) %></b>
+      <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+    </p>
+  <% end %>
+</div>
+<hr/>
+<%= link_to "uncompleted tasks", tasks_url %>
+
