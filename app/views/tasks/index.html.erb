@@ -1,29 +1,28 @@
-<% title "Tasks" %>
+
 <div class="span-24 last">
   <center>
     <%= render 'form' %>    
   </center>
   <hr/>
-  <h2>this_week's tasks:</h2>
 </div>
 
+<% #TODO make a _task.html.erb partial to make this DRYer %>
+
 <div class="span-3">
-    <p>Monday</p>
+    <h3>Monday</h3>
     <% @complete.thisweek.monday.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
     <% end %>
 </div>
 <div class="span-3">
-    <p>Tuesday</p>
+    <h3>Tuesday</h3>
     <% @complete.thisweek.tuesday.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
@@ -31,11 +30,10 @@
     <% end %>  
 </div>
 <div class="span-3">
-    <p>Wednesday</p>
+    <h3>Wednesday</h3>
     <% @complete.thisweek.wednesday.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
@@ -43,11 +41,10 @@
     <% end %> 
 </div>
 <div class="span-3">
-    <p>Thursday</p>
+    <h3>Thursday</h3>
     <% @complete.thisweek.thursday.each do |task| %>
       <p>
         <%= task.name %> >>  <br/>
-        in  <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
@@ -55,11 +52,10 @@
     <% end %> 
 </div>
 <div class="span-3">
-    <p>Friday</p>
+    <h3>Friday</h3>
     <% @complete.thisweek.friday.each do |task| %>
       <p>
         <%= task.name %> >>  <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
@@ -67,11 +63,10 @@
     <% end %> 
 </div>
 <div class="span-3">
-    <p>Saturday</p>
+    <h3>Saturday</h3>
     <% @complete.thisweek.saturday.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
@@ -79,11 +74,10 @@
     <% end %> 
 </div>
 <div class="span-3 last">
-    <p>Sunday</p>
+    <h3>Sunday</h3>
     <% @complete.thisweek.sunday.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
-        in <b><%= distance_of_time_in_words(Time.now, task.due) %></b><br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>

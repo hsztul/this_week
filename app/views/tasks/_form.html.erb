@@ -1,10 +1,10 @@
 <%= form_for @task do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %> 
+    <%= f.label "new task:" %> 
     <%= f.text_field :name %>
 
-    <%= f.label :due %>
+    <%= f.label "due:" %>
     <%= f.date_select :due, :discard_year => true, :order => [:day, :month], :default => 1.days.from_now  %>
-    <%= f.submit %></p>
+    <%= submit_tag "create task", :class=>"button" %></p>
 <% end %>
