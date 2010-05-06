@@ -5,6 +5,7 @@
     <%= f.text_field :name %>
 
     <%= f.label "due:" %>
-    <%= f.date_select :due, :discard_year => true, :order => [:day, :month], :default => 1.days.from_now  %>
-    <%= submit_tag "create task", :class=>"button" %></p>
+    <%= f.date_picker_text_field :due, :size => 9 %>
+    <%= submit_tag "create task", :class=>"button" %>
+  </p>
 <% end %>
