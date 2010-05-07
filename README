@@ -2,4 +2,8 @@
 
 an task manager that shows only tasks that need to be done this week
 
-==
+== TODO:
+
+  +Add subtasks
+  +Create login system
+  +FB integration
