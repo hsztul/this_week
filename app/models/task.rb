@@ -1,6 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :name, :due, :completed, :currentweek, :daydue
-  
+  attr_accessible :name, :due, :completed, :currentweek, :daydue  
   validates :name, :presence => true
   
   scope :completed, where(:completed => true) 

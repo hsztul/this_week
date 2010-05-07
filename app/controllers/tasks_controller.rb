@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :authenticate_user!
   attr_accessor :completed
   respond_to :html, :xml
 
