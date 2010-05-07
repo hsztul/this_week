@@ -4,8 +4,9 @@ class TasksController < ApplicationController
   respond_to :html, :xml
 
   def index
-    @complete = Task.incomplete
-    @task = Task.new
+    @user = current_user
+    @complete = current_user.tasks.incomplete
+    @task = current_user.tasks.new
   end
   
   def showall
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new(params[:task])
+    @task = current_user.tasks.new(params[:task])
     if @task.save
       flash[:notice] = "Successfully created task."
       redirect_to tasks_url
