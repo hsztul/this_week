@@ -98,11 +98,11 @@ form.inline p {margin-bottom:0;}
 .button {
   color: Black;
   background: LightGrey;
-  border: 1px solid #900;
+  border: 1px solid #0404B4;
 }
 .button:hover {
-  color: Black;
-  background: Gray;
+  color: #0404B4;
+  background: LightGrey;
 }
 
 /* grid.css */
