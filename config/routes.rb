@@ -1,6 +1,6 @@
 Thisweek::Application.routes.draw do |map|
 
-  resources :tasks do
+  resources :tasks
 
   root :to => "tasks#index"
 
