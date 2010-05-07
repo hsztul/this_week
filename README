@@ -10,5 +10,5 @@ an task manager that shows only tasks that need to be done this week
 == TODO:
   
   +Put incomplete items that are "old" into a "bin" and show "bin"
-  +Add subtasks
+  +Add subtasks via acts_as_tree
   +FB integration

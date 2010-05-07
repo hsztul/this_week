@@ -94,6 +94,7 @@ form.inline p {margin-bottom:0;}
 .success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
 .error a {color:#8a1f11;}
 .success a {color:#264409;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
 .button {
   color: Black;
   background: LightGrey;
