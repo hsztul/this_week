@@ -5,10 +5,10 @@ an task manager that shows only tasks that need to be done this week
 == Added:
 
   +Used the devise gem for user authentication
-
+  +Linked users and tasks
+  
 == TODO:
   
-  ++link users and tasks
-  
+  +Put incomplete items that are "old" into a "bin" and show "bin"
   +Add subtasks
   +FB integration
