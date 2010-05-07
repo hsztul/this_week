@@ -2,8 +2,13 @@
 
 an task manager that shows only tasks that need to be done this week
 
-== TODO:
+== Added:
 
+  +Used the devise gem for user authentication
+
+== TODO:
+  
+  ++link users and tasks
+  
   +Add subtasks
-  +Create login system
   +FB integration
