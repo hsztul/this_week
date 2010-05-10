@@ -2,9 +2,9 @@ class Task < ActiveRecord::Base
   attr_accessible :name, :due, :completed, :currentweek, :daydue  
   validates :name, :presence => true
   belongs_to :user, :class_name => "User", :foreign_key => "user_id"
-  
+    
   scope :completed, where(:completed => true) 
-  scope :incomplete, where(:completed => nil) 
+  scope :incomplete, where(:completed => false) 
   scope :thisweek, where(:currentweek => true)
   scope :notthisweek, where(:currentweek => nil)
   scope :monday, where(:daydue => '1')
@@ -16,10 +16,10 @@ class Task < ActiveRecord::Base
   scope :sunday, where(:daydue => '7')
       
   before_save{
-    if Time.now.to_date.cweek == self.due.cweek then
+    if Time.now.to_date.cweek == self.due.to_date.cweek then
       self.currentweek = true
     end
-    self.daydue = self.due.cwday
+    self.daydue = self.due.to_date.cwday
   }
 
 end

@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :name
       t.datetime :due
-      t.boolean :completed
+      t.boolean :completed, :default => :false
       t.boolean :currentweek
       t.timestamps
     end
