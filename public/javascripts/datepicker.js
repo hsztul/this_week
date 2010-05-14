@@ -198,9 +198,7 @@ DatePicker.prototype = {
   },
   
   selectDate: function(date){
-    this.textbox.value = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
-    this.textbox.focus();
-    this.keepVisible = false;
+    this.textbox.value = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();    this.keepVisible = false;
     this.dateSelected = true;
     this.hide();
   },

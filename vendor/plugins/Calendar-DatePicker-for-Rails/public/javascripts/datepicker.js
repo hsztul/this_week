@@ -63,8 +63,8 @@ DatePicker.prototype = {
     var match = $F(this.textbox).match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{2,4})$/);
     if (match) {
       // Convert the values into a proper JS date object
-      var month = Number(match[1]) - 1;
-      var day = Number(match[2]);
+      var month = Number(match[1]);
+      var day = Number(match[2]) - 1;
       var year = Number(match[3]);
       if (year < 100) 
         year += (year < 25 ? 2000 : 1900);
@@ -198,7 +198,7 @@ DatePicker.prototype = {
   },
   
   selectDate: function(date){
-    this.textbox.value = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+    this.textbox.value = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
     this.textbox.focus();
     this.keepVisible = false;
     this.dateSelected = true;
