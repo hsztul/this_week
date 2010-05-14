@@ -13,9 +13,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # Bundle the extra gems:
 # gem 'aws-s3', :require => 'aws/s3'
 gem 'devise', '1.1.rc1'
-gem 'nifty-generators'
-gem 'pg'
-gem 'bundler', '0.9.20'
+gem 'nifty-generators'  
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test

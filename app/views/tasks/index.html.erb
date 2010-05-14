@@ -10,79 +10,114 @@
 
 <div class="span-3">
     <h3>Monday</h3>
-    <% @complete.thisweek.monday.each do |task| %>
+    <% @incomplete.thisweek.monday.roots.each do |task| %>
+      <p>
+        <%= task.name %> >> <br/>
+        <%= link_to "complete!", complete_task_path(task.id) %>
+        <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+        <small>| <%= link_to "subtask", new_task_path(task.id) %> |</small>
+      </p>
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+          <%= link_to "complete!", complete_task_path(subtask.id) %>
+        <% end %>
+      </p>
+      <hr/>
+    <% end %>
+</div>
+<div class="span-3">
+    <h3>Tuesday</h3>
+    <% @incomplete.thisweek.tuesday.roots.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
-    <% end %>
-</div>
-<div class="span-3">
-    <h3>Tuesday</h3>
-    <% @complete.thisweek.tuesday.each do |task| %>
       <p>
-        <%= task.name %> >> <br/>
-        <%= link_to "complete!", complete_task_path(task.id) %>
-        <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
       </p>
       <hr/>
     <% end %>  
 </div>
 <div class="span-3">
     <h3>Wednesday</h3>
-    <% @complete.thisweek.wednesday.each do |task| %>
+    <% @incomplete.thisweek.wednesday.roots.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+      </p>
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
       </p>
       <hr/>
     <% end %> 
 </div>
 <div class="span-3">
     <h3>Thursday</h3>
-    <% @complete.thisweek.thursday.each do |task| %>
+    <% @incomplete.thisweek.thursday.roots.each do |task| %>
       <p>
         <%= task.name %> >>  <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
+      </p>
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
       </p>
       <hr/>
     <% end %> 
 </div>
 <div class="span-3">
     <h3>Friday</h3>
-    <% @complete.thisweek.friday.each do |task| %>
+    <% @incomplete.thisweek.friday.roots.each do |task| %>
       <p>
         <%= task.name %> >>  <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
-      <hr/>
-    <% end %> 
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
+      </p>
+      <hr/>    <% end %> 
 </div>
 <div class="span-3">
     <h3>Saturday</h3>
-    <% @complete.thisweek.saturday.each do |task| %>
+    <% @incomplete.thisweek.saturday.roots.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
-      <hr/>
-    <% end %> 
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
+      </p>
+      <hr/>    <% end %> 
 </div>
 <div class="span-3 last">
     <h3>Sunday</h3>
-    <% @complete.thisweek.sunday.each do |task| %>
+    <% @incomplete.thisweek.sunday.roots.each do |task| %>
       <p>
         <%= task.name %> >> <br/>
         <%= link_to "complete!", complete_task_path(task.id) %>
         <small>| <%= link_to "delete", task, :method => :delete %> |</small>
       </p>
-      <hr/>
-    <% end %> 
+      <p>
+        <% task.children.incomplete.each do |subtask| %>
+          -- <%= subtask.name %>
+        <% end %>
+      </p>
+      <hr/>    <% end %> 
 </div>
 
   <hr/>

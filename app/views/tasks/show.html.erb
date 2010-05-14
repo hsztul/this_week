@@ -18,6 +18,7 @@
 </p>
 
 <p>
+  <%= link_to "complete!", complete_task_path(@task) %> |
   <%= link_to "Edit", edit_task_path(@task) %> |
   <%= link_to "Destroy", @task, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", tasks_path %>

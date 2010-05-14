@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   def index
     @user = current_user
-    @complete = current_user.tasks.incomplete
+    @incomplete = current_user.tasks.incomplete
     @task = current_user.tasks.new
   end
   
@@ -22,15 +22,16 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = current_user.tasks.new(params[:task])
-    if @task.save
-      flash[:notice] = "Successfully created task."
-      redirect_to tasks_url
-    else
-      render :action => 'new'
-    end
+      @task = current_user.tasks.new(params[:task])
+      if @task.save
+        #flash[:notice] = "Successfully created task."
+        redirect_to tasks_url
+      else
+        render :action => 'new'
+      end
   end
   
+
   def complete
     @task = Task.find(params[:id])
     @task.completed = true

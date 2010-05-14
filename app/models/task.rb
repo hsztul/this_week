@@ -2,7 +2,9 @@ class Task < ActiveRecord::Base
   attr_accessible :name, :due, :completed, :currentweek, :daydue  
   validates :name, :presence => true
   belongs_to :user, :class_name => "User", :foreign_key => "user_id"
-    
+
+  acts_as_tree  
+
   scope :completed, where(:completed => true) 
   scope :incomplete, where(:completed => false) 
   scope :thisweek, where(:currentweek => true)

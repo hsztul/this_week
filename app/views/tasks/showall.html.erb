@@ -4,7 +4,7 @@
 <div id="tasklist">
   <% @tasks.each do |task| %>
     <p>
-      <%= task.name %> >> due <%= task.due.strftime('%A') %> which is in <b><%= distance_of_time_in_words(Time.now, task.due) %></b>
+      <%= task.name %> >> due <%= task.due %></b>
       <small>| <%= link_to "delete", task, :method => :delete %> |</small>
     </p>
   <% end %>
