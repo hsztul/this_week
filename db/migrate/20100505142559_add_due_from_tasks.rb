@@ -1,6 +1,6 @@
 class AddDueFromTasks < ActiveRecord::Migration
   def self.up
-    add_column :tasks, :due, :datetime
+    add_column :tasks, :due, :date
   end
 
   def self.down
