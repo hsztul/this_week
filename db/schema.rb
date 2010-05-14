@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20100510175304) do
     t.boolean  "currentweek"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "due"
+    t.date     "due"
     t.integer  "daydue"
     t.integer  "user_id"
     t.integer  "parent_id"
