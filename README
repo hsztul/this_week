@@ -6,9 +6,10 @@ a task manager that shows only tasks that need to be done this week
 
   +Used the devise gem for user authentication
   +Linked users and tasks
+  +Add subtasks via acts_as_tree
   
 == TODO:
-  
+
+  +update the "currentweek" state when a user logs in
   +Put incomplete items that are "old" into a "bin" and show "bin"
-  +Add subtasks via acts_as_tree
   +FB integration
