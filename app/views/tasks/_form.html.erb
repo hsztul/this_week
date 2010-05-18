@@ -6,6 +6,8 @@
 
     <%= f.label "due:" %>
     <%= f.date_picker_text_field :due, :size => 9 %>
+	<%= hidden_field_tag(:parent_id, params[:id]) %>
     <%= submit_tag "create task", :class=>"button" %>
+
   </p>
 <% end %>

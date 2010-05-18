@@ -21,8 +21,10 @@
     </div>  
   	<div class="span-24">
       <h1>todo: this_week </h1>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+	<% flash.each do |key, msg| -%>
+	  <%= content_tag :p, msg, :id => key, :class=>"notice" -%>
+	<% end -%>
+
     	<hr/>
   	</div>
 

@@ -24,4 +24,5 @@ class Task < ActiveRecord::Base
     self.daydue = self.due.to_date.cwday
   }
 
+
 end

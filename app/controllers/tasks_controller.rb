@@ -7,6 +7,7 @@ class TasksController < ApplicationController
     @user = current_user
     @incomplete = current_user.tasks.incomplete
     @task = current_user.tasks.new
+    respond_with(@incomplete)
   end
   
   def showall
@@ -22,20 +23,37 @@ class TasksController < ApplicationController
   end
   
   def create
+    if params[:task][:parent_id]==nil
       @task = current_user.tasks.new(params[:task])
       if @task.save
-        #flash[:notice] = "Successfully created task."
+        flash[:notice] = "Task Created.  Time to get to work..."
         redirect_to tasks_url
       else
         render :action => 'new'
       end
+    else
+      @task = Task.find(params[:task][:parent_id])
+      @subtask = @task.children.create(params[:task])
+      if @subtask.save
+        flash[:notice] = "Task Created.  Time to get to work..."
+        redirect_to tasks_url
+      else
+        render :action => 'new'
+      end
+    end
+
   end
   
-
+  def subtask
+    @task = Task.find(params[:id])
+    @subtask = @task.children.new
+  end
+  
   def complete
     @task = Task.find(params[:id])
     @task.completed = true
     @task.save
+    flash[:notice] = "Hoorray! Task Completed!"
     redirect_to tasks_url
   end
   
@@ -56,7 +74,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    flash[:notice] = "Successfully destroyed task."
-    redirect_to tasks_url
+    flash[:notice] = "Task terminated."
+    redirect_to '/showall'
   end
 end

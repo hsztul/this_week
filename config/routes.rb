@@ -6,6 +6,8 @@ Thisweek::Application.routes.draw do |map|
   root :to => "tasks#index"
 
   match 'tasks/:id/complete' => 'tasks#complete', :as => :complete_task
+  match 'tasks/:id/subtask' => 'tasks#subtask', :as => :subtask
+
   match 'showall' => 'tasks#showall'
   # The priority is based upon order of creation:
   # first created -> highest priority.

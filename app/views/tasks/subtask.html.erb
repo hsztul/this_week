@@ -5,11 +5,9 @@
   <p>
     <%= f.label "new task:" %> 
     <%= f.text_field :name %>
-
-    <%= f.label "due:" %>
-    <%= f.date_picker_text_field :due, :size => 9 %>
+	<%= f.hidden_field(:due, :value=>@task.due)  %>
 	<%= f.hidden_field(:parent_id, :value =>params[:id]) %>
-    <%= submit_tag "create task", :class=>"button" %>
+    <%= submit_tag "create subtask", :class=>"button" %>
 
   </p>
 <% end %>
