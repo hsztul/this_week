@@ -23,6 +23,15 @@ class Task < ActiveRecord::Base
     end
     self.daydue = self.due.to_date.cwday
   }
+  
+  def after_find
+      if Time.now.to_date.cweek == self.due.to_date.cweek then
+        self.currentweek = true
+      else
+        self.currentweek = false
+      end
+      self.save
+  end
 
 
 end

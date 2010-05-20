@@ -1,9 +1,9 @@
+<% content_for :head do %>
+  <title>this_week's tasks</title>
+<% end %>
 
 <div class="span-24 last">
-  <center>
     <%= render 'form' %>    
-  </center>
-  <hr/>
 </div>
 
 <% #TODO make a _task.html.erb partial to make this DRYer %>
@@ -17,10 +17,12 @@
         <small>| <%= link_to "subtask", subtask_path(task.id) %> |</small>
       </p>
       <p>
+				<span class="grey">
         <% task.children.incomplete.each do |subtask| %>
           -- <%= subtask.name %>
           <%= link_to "complete!", complete_task_path(subtask.id) %>
         <% end %>
+				</span>
       </p>
       <hr/>
     <% end %>

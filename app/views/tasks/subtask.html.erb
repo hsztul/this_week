@@ -1,4 +1,6 @@
-<% title "New Task" %>
+<% content_for :head do %>
+  <title>creating a subtask!</title>
+<% end %>
 
 <%= form_for @subtask do |f| %>
   <%= f.error_messages %>
@@ -12,4 +14,4 @@
   </p>
 <% end %>
 
-<p><%= link_to "Back to List", tasks_path %></p>
+<p><%= link_to "cancel", tasks_path %></p>
